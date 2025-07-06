@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Bulls Pomodoro</title> <!--title of the app-->
+    <link rel="icon" type ="image/x-icon" href="images_blackBulls/Black_Bulls.png"> <!--The icon of our app-->
+    <link href="https://fonts.cdnfonts.com/css/hoppin" rel="stylesheet"> <!--The font of our app-->
+    <link rel="stylesheet" href="pomodoro_style.css">
+    <script src = "javascript_pomodoro.js" defer></script>
+
+</head>
+
+<body>
+    <!-- THE POMODORO BOX -->
+
+    <img src="images_blackBulls/fifth_clover.png" id="rotating-image" alt="Clover"> <!--clover image-->
+    <audio id="twinkle" src="sounds/twinkle.mp3" preload="auto"></audio>
+    <audio id="bell" src="sounds/bell.mp3" preload="auto"></audio>
+
+    <h1 id="title">Pomodoro Timer</h1>
+    <!-- adding focus calc, calculating focus time per day/week -->
+
+    <!-- dragable timer box-->
+    <div id="timer-card">
+        <div id="asta-attachment"></div>
+        <div id="finral-attachment"></div>
+        <div id="noelle-attachment"></div>
+        <div id="yami-attachment"></div>
+        <div id="magna-attachment"></div>
+        <div id="luck-attachment"></div>
+        <div id="gauche-attachment"></div>
+        <div id="charmy-attachment"></div>
+        <div id="vanessa-attachment"></div>
+
+        <!--card header: shows current mode, dots, and minimize its icon-->
+        <div id="card-header">
+          <span class="mode-label">Personal ▾</span>
+          <ul class = "menu">
+            <li class="item">Personal</li>
+            <li class="item">Study</li>
+            <li class="item">Work</li>
+            <li class="item">Relax</li>
+            <li class="item">Other</li>
+          </ul>
+          <!--dots: shows the progress of the timer-->
+          <div class="dots"> <!--shows the progress-->
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <span class="minimize">—</span> <!--minimizing the button-->
+        </div>
+        <!--card body: shows the main time, mode buttons, and actions buttons-->
+        <div id="card-body">
+            <div id="main-time">60:00</div> <!--timer display-->
+
+            <!--what mode we are o-->
+            <div class="mode-buttons">
+              <button class="mode selected">Pomodoro</button>
+              <button class="mode">Short Break</button>
+              <button class="mode">Long Break</button>
+            </div>
+            <!--actions buttons: start, reset, and settings toggle-->
+            <div class="actions">
+              <button id="start-button">Start</button>
+              <button id="pause-button">Pause</button>
+              <span class="icon" id="reset">⟲</span>
+              <span class="icon" id="settings-toggle">⚙️</span>
+            </div>
+        </div>
+
+         <!--settings panel-->
+         <div id="settings-panel" class="hidden">
+            <!-- Your settings inputs go here -->
+            <label><input type = "checkbox" id = "auto-transition"> Auto transition Timer</label><br><br>
+
+            <label> Pomodoro <input type= "number" id = "pomodoro-time" value = "0" ></label><br>
+            <label> Short Break <input type = "number" id = "short-break" value = "0" ></label><br>
+            <label>Long Break <input type = "number" id = "long-break" value = "0" ></label><br>
+            
+            <label>Timer Sound 
+                <select id="timer-sound">
+                  <option value="twinkle">Twinkle</option>
+                  <option value="bell">Bell</option>
+                </select>
+              </label><br><br>
+
+            <label> Alarm Volume
+                <input type = "range" min = "0" max = "100" value = "50" id = "volume-control">
+            </label>
+            <br><br>
+           <button id = "save-settings"> Save Settings</button>
+
+    </div>
+    <div>
+        <button id ="openBtn"> ☰ To-Do List</button>
+      </div>
+      
+        <div id = "todopanel">
+            <button id = "closeBtn"> &times; </button>
+            <h3>To Do List</h3>
+            <input type= "text" id = "todoInput" placeholder="Add a task..."/>
+            <button id = "addBtn">Add</button>
+            <ul id = "add_to_list"></ul>
+        </div>
+
+
+  <div class="sidebar">
+    <button id="open-soundboard">🔊 Sounds</button>
+  </div>
+
+  <div class="soundboard-panel" id="soundboard-panel">
+    <div class="soundboard-header">
+      <h3>Soundboard</h3>
+      <button id="close-soundboard">&times;</button>
+    </div>
+    
+    <label>YouTube Link</label>
+    <div class="youtube-input-row">
+      <input type="text" id="youtube-url" placeholder="Add YouTube URL">
+      <button id="mute-toggle">🔊</button>
+    </div>
+    <input type="range" id="youtube-volume" min="0" max="100" value="50">
+    <div id="youtube-player" style="display: none;"></div>
+  </div> 
+
+  <!-- adding focus mode -->
+  <div class="focus-toggle-container">
+    <button id="focus-mode-button">🧘 Focus Mode</button>
+  </div>
+
+    </body>
+</html>

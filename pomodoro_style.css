@@ -1,0 +1,629 @@
+body{
+background-color: black;
+margin: 0px;
+background-size: cover;
+font-family: 'Trebuchet MS';
+color: white;
+}
+
+#title{
+    text-align: center;
+    font-family: 'thunder', sans-serif;
+    margin: 30px;
+    color: white;
+    font-size: 35px;
+}
+
+#rotating-image {
+    position: fixed;
+    top: 0px;
+    right: 10px;
+    width: 100px;
+    height: 100px;
+    animation: spin 10s linear infinite;
+    user-select: none;
+
+
+  }
+
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }  
+  
+
+#timer-card {
+  position: absolute;
+  z-index: 10;
+  top: 250px;
+  right: 100px;
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  width: 360px;
+  padding: 20px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* The "attached" image container */
+#asta-attachment {
+  position: absolute;
+  bottom: 50%;
+  left: 68%;  /* place it exactly at the left side of #timer-card */
+  transform: translateY(-50%);
+  width: 180px;
+  height: 180px;
+  background: url("images_blackBulls/asta_asta.png") no-repeat center center;
+  background-size: contain;
+  cursor: pointer; /* optional, for interactivity */
+  user-select: none;
+}
+
+/* The "attached" image container */
+#finral-attachment {
+  position: absolute;
+  bottom: 53%;
+  left: 50%;  /* place it exactly at the left side of #timer-card */
+  transform: translateY(-50%);
+  width: 180px;
+  height: 180px;
+  background: url("images_blackBulls/finral_finral.png") no-repeat center center;
+  background-size: contain;
+  cursor: pointer; /* optional, for interactivity */
+  user-select: none;
+}
+
+/* The "attached" image container */
+#noelle-attachment {
+  position: absolute;
+  bottom: 55%;
+  right: 67%;  /* place it exactly at the left side of #timer-card */
+  transform: translateY(-50%);
+  width: 170px;
+  height: 170px;
+  background: url("images_blackBulls/noelle_noelle.png") no-repeat center center;
+  background-size: contain;
+  cursor: pointer; /* optional, for interactivity */
+  user-select: none;
+}
+
+/* The "attached" image container */
+#magna-attachment {
+  position: absolute;
+  bottom: 53%;
+  left: 32%;  /* place it exactly at the left side of #timer-card */
+  transform: translateY(-50%);
+  width: 180px;
+  height: 180px;
+  background: url("images_blackBulls/magna_magna.png") no-repeat center center;
+  background-size: contain;
+  cursor: pointer; /* optional, for interactivity */
+  user-select: none;
+} 
+
+/* The "attached" image container */
+#luck-attachment {
+  position: absolute;
+  bottom: 50%;
+  left: 12%;  /* place it exactly at the left side of #timer-card */
+  transform: translateY(-50%);
+  width: 180px;
+  height: 180px;
+  background: url("images_blackBulls/luck_luck.png") no-repeat center center;
+  background-size: contain;
+  cursor: pointer; /* optional, for interactivity */
+  user-select: none;
+} 
+/* The "attached" image container */
+#gauche-attachment {
+  position: absolute;
+  top: 30%;
+  right: 86%;  /* place it exactly at the left side of #timer-card */
+  transform: translateY(-50%);
+  width: 180px;
+  height: 180px;
+  background: url("images_blackBulls/gauche_gauche.png") no-repeat center center;
+  background-size: contain;
+  cursor: pointer; /* optional, for interactivity */
+  user-select: none;
+} 
+/* The "attached" image container */
+#yami-attachment {
+  position: absolute;
+  top: 75%;
+  right: 80%;  /* place it exactly at the left side of #timer-card */
+  transform: translateY(-50%);
+  width: 180px;
+  height: 180px;
+  background: url("images_blackBulls/yami_yami.png") no-repeat center center;
+  background-size: contain;
+  cursor: pointer; /* optional, for interactivity */
+  user-select: none;
+  
+}
+#charmy-attachment {
+  position: absolute;
+  top: 75%;
+  left: 80%;  /* place it exactly at the left side of #timer-card */
+  transform: translateY(-50%);
+  width: 180px;
+  height: 180px;
+  background: url("images_blackBulls/charmy_charmy.png") no-repeat center center;
+  background-size: contain;
+  cursor: pointer;
+  user-select: none;
+}
+
+#vanessa-attachment {
+  position: absolute;
+  top: 14%;
+  left: 75%;  /* place it exactly at the left side of #timer-card */
+  transform: translateY(-50%);
+  width: 240px;
+  height: 240px;
+  background: url("images_blackBulls/vanessa_vanessa.png") no-repeat center center;
+  background-size: contain;
+  cursor: pointer; /* optional, for interactivity */
+  user-select: none;
+}
+
+#card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+
+.dots {
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #555;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background: rgb(236, 204, 47);
+}
+
+.minimize {
+  cursor: pointer;
+  font-size: 18px;
+  #settings-panel.visible {
+    display: block;
+  }
+  
+}
+#main-time {
+  font-size: 60px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.mode-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.mode {
+  background: none;
+  color: white;
+  border: none;
+  font-size: 15px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+.mode.selected {
+  border-bottom: 2px solid rgb(236, 204, 47);
+}
+.mode-label {
+  font-size: 15px;
+  position: relative;
+  cursor: pointer;
+}
+
+.menu {
+  position: absolute; 
+  top: 100%;
+  left: 0;
+  background-color: #2e2e2e;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 6px;
+  display: none;
+  z-index: 1000;
+  min-width: 100px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.menu .item {
+  padding: 10px 15px;
+  cursor: pointer;
+  color: white;
+}
+
+.menu .item:hover {
+  background-color:rgb(236, 204, 47);
+}
+
+.menu.show {
+  display: block;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+#start-button {
+  padding: 0px 10px;
+  font-size: 15px;
+  border: 2px solid white;
+  border-radius: 15px;
+  background: none;
+  color: white;
+  cursor: pointer;
+}
+#pause-button{
+  padding: 0px 10px;
+  font-size: 15px;
+  border: 2px solid white;
+  border-radius: 15px;
+  background: none;
+  color: white;
+  cursor: pointer;
+}
+.icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#settings-panel.hidden{
+  display: none;
+}
+
+#settings-panel{
+  color: white;
+  border-radius: 10px;
+  position: fixed;
+  box-sizing: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  background-color: #2e2e2e;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  display:list-item;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+
+  
+}
+
+#settings-panel.hidden {
+  max-height: 0;
+  padding: 0;
+}
+
+#save-settings{
+  font-size: 14px;
+  padding: 5px;
+  border: 0px solid white;
+  border-radius: 10px;
+  color: black;
+  cursor: pointer;
+}
+.hidden{
+  display: none;
+}
+
+
+/* To-Do Panel Style */
+#todopanel {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #1c1c1c;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+  z-index: 1000;
+  color: white;
+}
+
+#todopanel.open {
+  width: 300px;
+}
+
+#openBtn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+#todopanel h3{
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 10px; 
+}
+.soundboard-header h3 {
+  text-align: center;
+  margin-left: 90px;
+  margin-bottom: 10px; 
+  font-size: 20px;
+}
+
+#todoInput {
+  width: 80%;
+  margin: 20px auto;
+  display: block;
+  padding: 8px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: white;
+  background: #333;
+  border-radius: 100px;
+  border: none;
+}
+
+#addBtn {
+  display: block;
+  margin-left: 233px;
+  padding: 5px 10px;
+  font-size: 14px;
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#add_to_list {
+  list-style: none;
+  padding: 0;
+
+}
+
+#add_to_list li {
+  margin-bottom: 10px;
+  padding: 0px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.done {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.round-checkbox {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #555;
+  background-color: white;
+  cursor: pointer;
+  position: relative;
+}
+
+.round-checkbox:checked {
+  background-color: #555;
+}
+
+.todo-text.done {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  cursor: pointer;
+  font-size: 16px;
+  display: none;
+}
+
+.sidebar button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  margin: 20px 1px;
+  cursor: pointer;
+}
+
+#open-soundboard{
+  position: fixed;
+  top:50px;
+  left: 20px;
+  z-index: 1000;
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 8px 22px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.soundboard-panel{
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #1c1c1c;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+  z-index: 1000;
+  color: white;
+}
+
+.soundboard-panel.open {
+  width: 310px;
+}
+#close-soundboard{
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+.soundboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.soundboard-panel input[type="text"] {
+  width: 80%;
+  padding: 8px;
+  border-radius: 100px;
+  background: #333;
+  border: none;
+  color: white;
+  margin-bottom: 10px;
+}
+
+#mute-toggle {
+  background: none;
+  border: none;
+  font-size: 18px;
+  margin-top: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+#youtube-volume {
+  width: 80%;
+}
+
+body.focus-mode #sidebar,
+body.focus-mode #todopanel,
+body.focus-mode #settings-panel,
+body.focus-mode .soundboard-panel {
+  display: none !important;
+}
+
+body.focus-mode {
+  background-color: black;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#focus-mode-button {
+  position: fixed;
+  top: 40px;
+  right: 100px;
+  border-radius: 20px;
+  padding: 5px 10px;
+  background-color: #444;
+  color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.focus-stats {
+  font-family: 'hoppin', sans-serif;
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  border-radius: 10px;
+  padding: 10px;
+  max-width: 200px;
+  margin-right: 120px;
+  margin-top: 50px;
+  user-select: text;
+}
+
+.focus-stats h2 {
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-align: center;
+  color: rgb(255,255,255);
+  letter-spacing: 1.5px;
+}
+
+.focus-stats .stat {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  box-shadow: inset 1px 1px 1px #e7c012;
+}
+
+.focus-stats .stat-label {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: rgb(255,255,255);
+}
+
+.focus-stats .stat-value {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: rgb(255, 255, 255);
+  min-width: 40px;
+  text-align: right;
+}
+
+.focus-stats .unit {
+  font-size: 1rem;
+  color: rgb(255,255,255);
+  margin-left: 4px;
+  align-self: normal;
+}
