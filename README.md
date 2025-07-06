@@ -24,7 +24,7 @@ Black Bulls Pomodoro is a customizable and interactive Pomodoro timer app themed
 - LocalStorage for saving settings and progress
 
 # Installation
-Clone or download this repository and open the index.html file in your preferred web browser. No additional setup required.
+Clone or download this repository and open the pomodoro.html file in your preferred web browser. No additional setup required.
 
 
 # Disclaimer
